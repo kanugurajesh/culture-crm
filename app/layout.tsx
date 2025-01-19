@@ -3,6 +3,8 @@ import { Inter } from 'next/font/google'
 import { ThemeProvider } from './providers/ThemeProvider'
 import Header from './components/Header'
 import Sidebar from './components/Sidebar'
+import Link from 'next/link'
+import { HomeIcon, ChartBarIcon, UsersIcon, CheckIcon, EnvelopeIcon, ChatBubbleLeftRightIcon } from '@heroicons/react/24/outline'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,6 +12,8 @@ export const metadata = {
   title: 'CultureCRM - Modern Customer Relationship Management',
   description: 'A modern CRM system built by Kanugu Rajesh',
 }
+
+const linkClass = 'flex items-center px-4 py-2 text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg'
 
 export default function RootLayout({
   children,
@@ -26,7 +30,34 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="flex h-screen bg-gray-100 dark:bg-gray-900">
-            <Sidebar />
+            <Sidebar>
+              <nav className="space-y-1">
+                <Link href="/dashboard" className={linkClass}>
+                  <HomeIcon className="w-5 h-5" />
+                  <span>Dashboard</span>
+                </Link>
+                <Link href="/customers" className={linkClass}>
+                  <UsersIcon className="w-5 h-5" />
+                  <span>Customers</span>
+                </Link>
+                <Link href="/tasks" className={linkClass}>
+                  <CheckIcon className="w-5 h-5" />
+                  <span>Tasks</span>
+                </Link>
+                <Link href="/email-templates" className={linkClass}>
+                  <EnvelopeIcon className="w-5 h-5" />
+                  <span>Email Templates</span>
+                </Link>
+                <Link href="/feedback" className={linkClass}>
+                  <ChatBubbleLeftRightIcon className="w-5 h-5" />
+                  <span>Feedback</span>
+                </Link>
+                <Link href="/analytics" className={linkClass}>
+                  <ChartBarIcon className="w-5 h-5" />
+                  <span>Analytics</span>
+                </Link>
+              </nav>
+            </Sidebar>
             <div className="flex-1 flex flex-col md:ml-64">
               <Header />
               <main className="flex-1 overflow-y-auto pt-16 px-4 md:px-6">
@@ -65,7 +96,7 @@ export default function RootLayout({
                       className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
                     >
                       <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                       </svg>
                     </a>
                   </div>

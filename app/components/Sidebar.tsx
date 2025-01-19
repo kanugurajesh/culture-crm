@@ -14,12 +14,19 @@ import {
   PlusIcon,
   PhoneIcon,
   CalendarIcon,
-  DocumentPlusIcon
+  DocumentPlusIcon,
+  CheckCircleIcon,
+  EnvelopeIcon,
+  ChatBubbleBottomCenterTextIcon
 } from '@heroicons/react/24/outline';
 import { useState, useEffect } from 'react';
 import { Logo } from './Logo';
 
-const Sidebar = () => {
+interface SidebarProps {
+  children: React.ReactNode;
+}
+
+const Sidebar: React.FC<SidebarProps> = ({ children }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showQuickActions, setShowQuickActions] = useState(false);
   const pathname = usePathname();
@@ -27,8 +34,12 @@ const Sidebar = () => {
   const menuItems = [
     { name: 'Dashboard', href: '/', icon: HomeIcon },
     { name: 'Customers', href: '/customers', icon: UsersIcon },
+    { name: 'Tasks', href: '/tasks', icon: CheckCircleIcon },
+    { name: 'Analytics', href: '/analytics', icon: ChartBarIcon },
     { name: 'Campaigns', href: '/campaigns', icon: ChartBarIcon },
     { name: 'Communication', href: '/communication', icon: ChatBubbleLeftIcon },
+    { name: 'Email Templates', href: '/email-templates', icon: EnvelopeIcon },
+    { name: 'Feedback', href: '/feedback', icon: ChatBubbleBottomCenterTextIcon },
     { name: 'Notifications', href: '/notifications', icon: BellIcon },
     { name: 'Settings', href: '/settings', icon: CogIcon },
   ];
@@ -143,6 +154,7 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
+      {children}
     </>
   );
 };
