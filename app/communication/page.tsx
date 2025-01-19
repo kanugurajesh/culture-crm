@@ -1,4 +1,4 @@
-import { PaperAirplaneIcon, FaceSmileIcon, LanguageIcon } from '@heroicons/react/24/outline';
+import { PaperAirplaneIcon, LanguageIcon } from '@heroicons/react/24/outline';
 
 // Mock conversation data
 const mockConversations = [

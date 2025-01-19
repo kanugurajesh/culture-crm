@@ -1,10 +1,8 @@
 "use client";
 
-import { useState } from 'react';
 import {
   GlobeAltIcon,
   SunIcon,
-  MoonIcon,
   BellIcon,
   LanguageIcon,
 } from '@heroicons/react/24/outline';
