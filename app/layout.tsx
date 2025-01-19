@@ -39,7 +39,7 @@ export default function RootLayout({
                   </div>
                   <div className="flex items-center space-x-4">
                     <a
-                      href="https://github.com/kanugu"
+                      href="https://github.com/kanugurajesh"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
@@ -49,7 +49,7 @@ export default function RootLayout({
                       </svg>
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/kanugu-rajesh"
+                      href="https://www.linkedin.com/in/rajesh-kanugu-aba8a3254/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
@@ -59,7 +59,7 @@ export default function RootLayout({
                       </svg>
                     </a>
                     <a
-                      href="https://kanugu.dev"
+                      href="https://kanugurajesh.vercel.app"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-200"
