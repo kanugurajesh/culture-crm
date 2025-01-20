@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
       confidence: confidence * 100,
       score,
     });
-  } catch (error) {
+  } catch {
     return NextResponse.json(
       { error: 'Failed to analyze sentiment' },
       { status: 500 }
