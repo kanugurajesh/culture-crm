@@ -98,17 +98,25 @@ const Header = () => {
   const unreadCount = notifications.filter(n => !n.read).length;
 
   return (
-    <header className="fixed right-0 top-0 left-0 md:left-64 h-16 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 z-30">
-      <div className="flex items-center justify-between h-full px-4 md:px-6">
+    <header className="fixed right-0 top-0 md:pl-64 w-full h-16 bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 z-30">
+      <div className="flex items-center justify-between h-full px-4">
         <div className="flex items-center">
-          <div className="ml-10 md:ml-0 md:hidden">
-            <Logo className="scale-75" />
-          </div>
-          <h1 className="hidden md:block text-xl font-semibold text-gray-800 dark:text-white">
-            Welcome to CultureCRM
-          </h1>
+          <Logo />
         </div>
-        <div className="flex items-center space-x-2 md:space-x-4 ml-auto">
+        
+        <div className="flex items-center space-x-4">
+          {/* Theme Toggle */}
+          <button
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="p-2 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+          >
+            {theme === 'dark' ? (
+              <SunIcon className="h-6 w-6" />
+            ) : (
+              <MoonIcon className="h-6 w-6" />
+            )}
+          </button>
+
           {/* Notifications */}
           <div className="relative" ref={notificationRef}>
             <button 
@@ -159,15 +167,6 @@ const Header = () => {
               </div>
             )}
           </div>
-
-          {/* Theme Toggle */}
-          <button
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="p-2 text-gray-600 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg"
-            aria-label="Toggle theme"
-          >
-            {theme === 'dark' ? <SunIcon className="w-6 h-6" /> : <MoonIcon className="w-6 h-6" />}
-          </button>
 
           {/* User Profile */}
           <div className="relative" ref={profileRef}>

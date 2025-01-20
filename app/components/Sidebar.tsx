@@ -80,81 +80,87 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
         )}
       </button>
 
-      {/* Overlay */}
-      {isMobileMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
-      )}
-
-      {/* Sidebar */}
-      <div className={`fixed h-full w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 z-40 transition-transform duration-300 ease-in-out ${
-        isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
-      }`}>
-        <div className="flex flex-col h-full">
-          <div className="flex items-center justify-center h-16 border-b border-gray-200 dark:border-gray-700">
-            <Logo />
-          </div>
-          
-          {/* Quick Actions */}
-          <div className="p-4">
-            <button
-              onClick={() => setShowQuickActions(!showQuickActions)}
-              className="w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600"
-            >
-              Quick Actions
-            </button>
+      <div className="flex">
+        {/* Sidebar */}
+        <aside className={`fixed inset-y-0 left-0 transform ${
+          isMobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
+        } md:translate-x-0 transition-transform duration-300 ease-in-out w-64 bg-white dark:bg-gray-800 border-r border-gray-200 dark:border-gray-700 z-30`}>
+          <div className="flex flex-col h-full">
+            <div className="flex items-center justify-center h-16 border-b border-gray-200 dark:border-gray-700">
+              <Logo />
+            </div>
             
-            {showQuickActions && (
-              <div className="mt-2 space-y-1">
-                {quickActions.map((action) => (
-                  <button
-                    key={action.name}
-                    onClick={action.action}
-                    className="w-full flex items-center px-3 py-2 text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
-                  >
-                    <action.icon className="w-5 h-5 mr-2" />
-                    {action.name}
-                  </button>
+            {/* Quick Actions */}
+            <div className="p-4">
+              <button
+                onClick={() => setShowQuickActions(!showQuickActions)}
+                className="w-full px-4 py-2 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600"
+              >
+                Quick Actions
+              </button>
+              
+              {showQuickActions && (
+                <div className="mt-2 space-y-1">
+                  {quickActions.map((action) => (
+                    <button
+                      key={action.name}
+                      onClick={action.action}
+                      className="w-full flex items-center px-3 py-2 text-sm text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-md transition-colors"
+                    >
+                      <action.icon className="w-5 h-5 mr-2" />
+                      {action.name}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <nav className="flex-1 overflow-y-auto">
+              <ul className="p-4 space-y-2">
+                {menuItems.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className={`flex items-center p-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors ${
+                        pathname === item.href ? 'bg-gray-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400' : ''
+                      }`}
+                    >
+                      <item.icon className="w-6 h-6 mr-3" />
+                      {item.name}
+                    </Link>
+                  </li>
                 ))}
-              </div>
-            )}
-          </div>
+              </ul>
+            </nav>
 
-          <nav className="flex-1 overflow-y-auto">
-            <ul className="p-4 space-y-2">
-              {menuItems.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className={`flex items-center p-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors ${
-                      pathname === item.href ? 'bg-gray-100 dark:bg-gray-700 text-blue-600 dark:text-blue-400' : ''
-                    }`}
-                  >
-                    <item.icon className="w-6 h-6 mr-3" />
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-
-          {/* User Info */}
-          <div className="p-4 border-t border-gray-200 dark:border-gray-700">
-            <div className="flex items-center">
-              <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center">
-                <span className="text-blue-600 dark:text-blue-400 font-semibold">KR</span>
-              </div>
-              <div className="ml-3">
-                <p className="text-sm font-medium text-gray-700 dark:text-gray-200">Kanugu Rajesh</p>
-                <p className="text-xs text-gray-500 dark:text-gray-400">Full Stack Developer</p>
+            {/* User Info */}
+            <div className="p-4 border-t border-gray-200 dark:border-gray-700">
+              <div className="flex items-center">
+                <div className="w-10 h-10 rounded-full bg-blue-100 dark:bg-blue-900/20 flex items-center justify-center">
+                  <span className="text-blue-600 dark:text-blue-400 font-semibold">KR</span>
+                </div>
+                <div className="ml-3">
+                  <p className="text-sm font-medium text-gray-700 dark:text-gray-200">Kanugu Rajesh</p>
+                  <p className="text-xs text-gray-500 dark:text-gray-400">Full Stack Developer</p>
+                </div>
               </div>
             </div>
           </div>
+        </aside>
+
+        {/* Main Content */}
+        <div className="flex-1 md:ml-64">
+          {children}
         </div>
       </div>
-      {children}
+
+      {/* Overlay */}
+      {isMobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 z-20 md:hidden"
+          onClick={() => setIsMobileMenuOpen(false)}
+        />
+      )}
     </>
   );
 };
