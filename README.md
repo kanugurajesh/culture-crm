@@ -1,36 +1,40 @@
 # CRM Demo
 
-A modern Customer Relationship Management (CRM) application built with Next.js 15, React 19, and TailwindCSS. This application provides a clean and intuitive interface for managing customer relationships, contacts, and business interactions.
+A modern, high-performance Customer Relationship Management (CRM) application built with **Next.js 15**, **React 19**, and **TailwindCSS**. This application provides an intuitive interface to manage customer relationships, contacts, and business interactions efficiently.
 
-## Features
+## 🚀 Features
 
-- 🎨 Modern and responsive UI with dark/light mode support
-- ⚡ Built with Next.js 15 and React 19 for optimal performance
-- 🎯 TypeScript for enhanced code quality and developer experience
-- 🎭 Theme switching capability using next-themes
-- 📱 Mobile-friendly design
-- 🛠️ Heroicons for beautiful UI elements
+- 🎨 **Modern & Responsive UI** – Supports **dark/light mode**
+- ⚡ **Optimized Performance** – Built with **Next.js 15** & **React 19**
+- 🎯 **TypeScript Support** – Ensuring better code quality & developer experience
+- 🎭 **Seamless Theme Switching** – Powered by `next-themes`
+- 📱 **Mobile-Friendly Design** – Works flawlessly on all devices
+- 🛠️ **Beautiful UI Elements** – Integrated with **Heroicons**
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-- **Framework:** Next.js 15.1.5
-- **UI Library:** React 19.0.0
-- **Styling:** TailwindCSS 3.4.1
-- **Icons:** Heroicons 2.2.0
-- **Theme Management:** next-themes
-- **Language:** TypeScript
-- **Linting:** ESLint
-- **Development Server:** Turbopack
+| Technology | Version |
+|------------|---------|
+| **Framework** | Next.js 15.1.5 |
+| **UI Library** | React 19.0.0 |
+| **Styling** | TailwindCSS 3.4.1 |
+| **Icons** | Heroicons 2.2.0 |
+| **Theme Management** | next-themes |
+| **Language** | TypeScript |
+| **Linting** | ESLint |
+| **Development Server** | Turbopack |
 
-## Getting Started
+## 🚀 Getting Started
 
-1. Clone the repository:
+Follow these steps to set up the project locally:
+
+### 1️⃣ Clone the Repository
 ```bash
 git clone https://github.com/kanugurajesh/CRM-Demo.git
 cd CRM-Demo
 ```
 
-2. Install dependencies:
+### 2️⃣ Install Dependencies
 ```bash
 npm install
 # or
@@ -39,7 +43,7 @@ yarn install
 pnpm install
 ```
 
-3. Run the development server:
+### 3️⃣ Start the Development Server
 ```bash
 npm run dev
 # or
@@ -48,25 +52,26 @@ yarn dev
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
+Open [http://localhost:3000](http://localhost:3000) in your browser to explore the application.
 
-## Development
+## 🏗️ Development
 
-- The main page is located in `app/page.tsx`
-- Styles are managed through TailwindCSS
-- The application uses the new Next.js App Router for enhanced routing capabilities
-- Dark/Light mode is implemented using next-themes
+- The **main page** is located in [`app/page.tsx`](./app/page.tsx).
+- **Styling** is managed using **TailwindCSS**.
+- The application utilizes **Next.js App Router** for **enhanced routing**.
+- **Dark/Light Mode** is implemented with `next-themes`.
 
-## Contributing
+## 🤝 Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+We welcome contributions! Feel free to fork the repository and submit a **Pull Request** with improvements or fixes.
 
-## License
+## 📜 License
 
-This project is open source and available under the [MIT License](LICENSE).
+This project is **open-source** and available under the [MIT License](LICENSE).
 
-## Deploy
+## 🚀 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new) from the creators of Next.js.
+The easiest way to deploy this **Next.js** application is via [Vercel](https://vercel.com/new), the official platform for Next.js.
 
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+For further details, refer to the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying).
+
